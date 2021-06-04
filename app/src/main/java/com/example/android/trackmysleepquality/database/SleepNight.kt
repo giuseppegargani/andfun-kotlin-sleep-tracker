@@ -16,4 +16,5 @@
 
 package com.example.android.trackmysleepquality.database
 
+//inizializzazione Primo Nodo
 // TODO (01) Create the SleepNight class.
