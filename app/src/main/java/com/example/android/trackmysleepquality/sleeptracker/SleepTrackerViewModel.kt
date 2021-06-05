@@ -23,6 +23,8 @@ import com.example.android.trackmysleepquality.database.SleepDatabaseDao
 
 /**
  * ViewModel for SleepTrackerFragment.
+ * Si richiedono come parametri quelli deo DAO e quelli del context della Application per avere accesso alle risorse
+ *
  */
 class SleepTrackerViewModel(
         val database: SleepDatabaseDao,

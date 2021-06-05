@@ -22,7 +22,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.example.android.trackmysleepquality.R
+import com.example.android.trackmysleepquality.database.SleepDatabase
 import com.example.android.trackmysleepquality.databinding.FragmentSleepTrackerBinding
 
 /**
@@ -51,6 +54,15 @@ class SleepTrackerFragment : Fragment() {
 
         //TODO (04) Update to assign sleepTrackerViewModel binding variable
         //to the sleepTrackerViewModel.
+
+        val application = requireNotNull(this.activity).application //per scrupolo si usa una funzione Kotlin che lancia errore se null
+        val datasource = SleepDatabase.getInstance(application).sleepDatabaseDao //crea la sorgente dati prendendo istanza del DB e poi lanciando il Dao
+        val viewModelFactory = SleepTrackerViewModelFactory(datasource, application)
+        val sleepTrackerViewModel= ViewModelProviders.of(this, viewModelFactory).get(SleepTrackerViewModel::class.java)
+
+        binding.sleepTrackerViewModel = sleepTrackerViewModel
+        binding.setLifecycleOwner (this)
+
 
         return binding.root
     }
