@@ -42,6 +42,46 @@ import androidx.appcompat.app.AppCompatActivity
  * This main activity is just a container for our fragments,
  * where the real action is.
  */
+/*TODO - 1 Si crea una DataClass con i seguenti valori
+    data class SleepNight  (
+    var nightId: Long = 0L,
+    val startTimeMilli: Long =  System.currentTimeMillis(),
+    var endTimeMilli: Long = startTimeMilli,
+    var sleepQuality: Int = -1
+    )
+ */
+
+/*TODO - 2 Annota la DataClass con Entity e si mette il nome della tabella (daily_sleep_quality_table)
+    @Entity(tableName = "daily_sleep_quality_table")
+ */
+/*TODO - 3 Annota la chiave primaria e metti gli opportuni valori
+        @PrimaryKey(autoGenerate = true)
+ */
+/*TODO - 4 Annota la proprietà seguenti e personalizza il nome
+        @Entity(tableName = "daily_sleep_quality_table")
+data class SleepNight(
+    @PrimaryKey(autoGenerate = true)
+    var nightId: Long = 0L,
+
+    @ColumnInfo(name = "start_time_milli")
+    val startTimeMilli: Long = System.currentTimeMillis(),
+
+    @ColumnInfo(name = "end_time_milli")
+    var endTimeMilli: Long = startTimeMilli,
+
+    @ColumnInfo(name = "quality_rating")
+    var sleepQuality: Int = -1
+)
+ */
+
+/*TODO VERIFICA E SINTESI
+    Si può personalizzare come si vuole la data class relativa al DB
+    SI POSSONO INIZIALIZZARE COME SI VOGLIONO!!!!!
+    per esempio con il tempo corrente!!!!! System.currentTimeMillis()
+    oppure si possono attribuendogli il valore di una altra variabile!!!!!!
+ */
+
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
