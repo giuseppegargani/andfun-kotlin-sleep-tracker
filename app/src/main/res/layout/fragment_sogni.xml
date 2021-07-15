@@ -13,7 +13,7 @@
         tools:context=".Sogni.SogniFragment">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/initialText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -24,13 +24,32 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/inserisci"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginBottom="16dp"
             android:text="Inserisci"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/inserisci"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/initialText" />
+
+        <Button
+            android:id="@+id/cancella"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancella"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/inserisci"
+            app:layout_constraintTop_toTopOf="@+id/inserisci" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
