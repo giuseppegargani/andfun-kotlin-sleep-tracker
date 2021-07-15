@@ -52,6 +52,10 @@ class SleepTrackerViewModel(
         null == it
     }
 
+    private var _navigateSogni = MutableLiveData<Boolean>()
+    val navigateSogni: LiveData<Boolean>
+    get() = _navigateSogni
+
     /**
      * If tonight has been set, then the STOP button should be visible.
      */
@@ -200,5 +204,11 @@ class SleepTrackerViewModel(
 
         // Show a snackbar message, because it's friendly.
         _showSnackbarEvent.value = true
+    }
+    fun goSogni(){
+        _navigateSogni.value=true
+    }
+    fun navigaSogniComplete(){
+        _navigateSogni.value=false
     }
 }
