@@ -49,6 +49,6 @@ interface SognoDatabaseDao {
      * Selects and returns the latest night.
      */
     @Query("SELECT * FROM sogni_table ORDER BY sognoId DESC LIMIT 1")
-    suspend fun getTonight(): Sogno?
+    suspend fun getThisDream(): Sogno?
 
 }

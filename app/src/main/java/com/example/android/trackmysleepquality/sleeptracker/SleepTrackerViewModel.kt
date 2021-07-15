@@ -34,7 +34,7 @@ class SleepTrackerViewModel(
         val database: SleepDatabaseDao,
         application: Application) : AndroidViewModel(application) {
 
-    private var tonight = MutableLiveData<SleepNight?>()
+    private var tonight = MutableLiveData<SleepNight?>() //viene inserita ogni volta che si modifica
 
     private val nights = database.getAllNights()
 
