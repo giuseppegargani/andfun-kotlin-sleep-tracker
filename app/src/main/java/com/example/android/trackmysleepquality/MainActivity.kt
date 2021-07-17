@@ -19,6 +19,20 @@ package com.example.android.trackmysleepquality
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
+/*TODO - 1 Aggiungi il viewModelJob e onCleared
+   private var viewModelJob = Job()
+   override fun onCleared() {
+   super.onCleared()
+   viewModelJob.cancel()
+    }
+ */
+
+
+/*TODO VERIFICA E SINTESI
+
+
+*/
+
 
 /**
  * This is the toy app for lesson 6 of the
