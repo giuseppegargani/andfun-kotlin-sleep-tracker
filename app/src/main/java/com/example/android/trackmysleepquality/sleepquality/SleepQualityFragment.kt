@@ -47,10 +47,32 @@ class SleepQualityFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
 
-        //TODO (06) Using the SleepTrackerFragment code as a reference, get the passed in arguments,
-        //and get the SleepQualityViewModel and add it to data binding.
+        /*TODO (06) Using the SleepTrackerFragment code as a reference, get the passed in arguments,   Crea un ViewModel da factory (arguments e datasource) e il binding (potrebbe esserci bisogno di farlo su XML Layout
+           and get the SleepQualityViewModel and add it to data binding.
+            val arguments = SleepQualityFragmentArgs.fromBundle(arguments!!)
+            // Create an instance of the ViewModel Factory.
+            val dataSource = SleepDatabase.getInstance(application).sleepDatabaseDao
+            val viewModelFactory = SleepQualityViewModelFactory(arguments.sleepNightKey, dataSource)
+            // Get a reference to the ViewModel associated with this fragment.
+            val sleepQualityViewModel =
+                ViewModelProvider(
+                        this, viewModelFactory).get(SleepQualityViewModel::class.java)
+            // To use the View Model with data binding, you have to explicitly
+            // give the binding object a reference to it.
+            binding.sleepQualityViewModel = sleepQualityViewModel
+         */
 
-        //TODO (07) implement an observer for navigateToSleepTracker.
+        /*TODO (07) implement an observer for navigateToSleepTracker.
+            sleepQualityViewModel.navigateToSleepTracker.observe(viewLifecycleOwner, Observer {
+            if (it == true) { // Observed state is true.
+                this.findNavController().navigate(
+                        SleepQualityFragmentDirections.actionSleepQualityFragmentToSleepTrackerFragment())
+                // Reset state to make sure we only navigate once, even if the device
+                // has a configuration change.
+                sleepQualityViewModel.doneNavigating()
+            }
+            })
+         */
 
         return binding.root
     }
